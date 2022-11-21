@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>tsv2csv</title>
+</head><body>
+<h1>tsv2csv</h1>
+
+CSV
+<textarea id=csv></textarea><br>
+↓
+TSV
+<textarea id=tsv></textarea><br>
+
+<hr>
+<a href=./>tsv2csv</a><br>
+<a href=https://github.com/code4fukui/tsv2csv>src on GitHub</a><br>
+
+<script type="module">
+import { TSV } from "https://js.sabae.cc/TSV.js";
+import { CSV } from "https://js.sabae.cc/CSV.js";
+
+csv.onchange = () => {
+  const s = CSV.decode(csv.value);
+  tsv.value = TSV.encode(s);
+};
+
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+textarea {
+  width: 100%;
+  height: 10em;
+}
+</style>
+
+</body><html>
+
